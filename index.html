@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Simple Counter</title>
+
+    <!-- Step 1: Add AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Step 2: Connect controller -->
+    <div ng-controller="myCtrl">
+
+        <!-- Step 3: Show counter value -->
+        <h2>Count: {{ count }}</h2>
+
+        <!-- Step 4: Button to increase count -->
+        <button ng-click="add()">Click Me</button>
+
+    </div>
+
+    <script>
+        // Step 5: Create app
+        var app = angular.module("myApp", []);
+
+        // Step 6: Create controller
+        app.controller("myCtrl", function($scope) {
+
+            // Step 7: Initial value
+            $scope.count = 0;
+
+            // Step 8: Function to increase count
+            $scope.add = function() {
+                $scope.count = $scope.count + 1;
+            };
+
+        });
+    </script>
+
+</body>
+</html>
